@@ -1,34 +1,60 @@
-import React from 'react';
-import { useState } from 'react';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Loading from './components/Loading';
+import LoginPage from './pages/LoginPage';
+import RegisterPage from './pages/RegisterPage';
+import Navigation from './components/Navigation';
 
 function App() {
-  const [count, setCount] = useState(0);
+  const {
+    authUser = null,
+    isPreload = false,
+  } = {}; // @TODO: get authUser and isPreLoad state from store
+
+  const dispatch = null; // @TODO: get dispatch function from store
+
+  useEffect(() => {
+    // @TODO: dispatch async action to preload app
+
+  }, [dispatch]);
+
+  const onSignOut = () => {
+    // @TODO: dispatch async action to sign out
+
+  };
+
+  if (isPreload) {
+    return null;
+  }
+
+  if (authUser === null) {
+    return (
+      <>
+        <Loading />
+        <main>
+          <Routes>
+            <Route path="/*" element={<LoginPage />} />
+            <Route path="/register" element={<RegisterPage />} />
+          </Routes>
+        </main>
+      </>
+    );
+  }
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank" rel="noreferrer">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank" rel="noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <Loading />
+      <div className="app-container">
+        <header>
+          <Navigation authUser={authUser} signOut={onSignOut} />
+        </header>
+        <main>
+          {/* <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/talks/:id" element={<DetailPage />} />
+          </Routes> */}
+        </main>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   );
 }
