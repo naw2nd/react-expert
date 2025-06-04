@@ -4,7 +4,7 @@ import ThreadDetail from '../components/ThreadDetail';
 import ThreadItem from '../components/ThreadItem';
 import ThreadCommentInput from '../components/ThreadCommentInput';
 import { useDispatch, useSelector } from 'react-redux';
-import { asyncReceiveThreadDetail } from '../states/threadDetail/action';
+import { asyncAddComment, asyncReceiveThreadDetail } from '../states/threadDetail/action';
 import CommentsList from '../components/CommentList';
 
 function DetailPage() {
@@ -19,9 +19,9 @@ function DetailPage() {
     dispatch(asyncReceiveThreadDetail(id));
   }, [id, dispatch]);
 
-  const onCommentThread = (text) => {
-    // @TODO: dispatch async action to add reply thread
-
+  const onCommentThread = (content) => {
+    console.log(content, id);
+    dispatch(asyncAddComment({ content, threadId: id }));
   };
 
   if (!threadDetail) {
@@ -40,7 +40,7 @@ function DetailPage() {
       }
       <ThreadDetail {...threadDetail} authUser={authUser.id} />
       <CommentsList comments={threadDetail.comments} />
-      <ThreadCommentInput replyThread={onCommentThread} />
+      <ThreadCommentInput onCommentThread={onCommentThread} />
     </section>
   );
 }

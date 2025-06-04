@@ -14,11 +14,11 @@ function HomePage() {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    console.log('HomePage useEffect');
     dispatch(asyncPopulateUsersAndThreads());
   }, [dispatch]);
 
   const onAddThread = (title, body) => {
-    console.log('Adding thread:', title, body);
     dispatch(asyncAddThread({ title, body }));
   };
 

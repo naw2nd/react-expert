@@ -1,39 +1,30 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import { useNavigate } from 'react-router-dom';
 
-function ThreadReplyInput({ replyThread }) {
+function ThreadReplyInput({ onCommentThread }) {
   const [text, setText] = useState('');
-  const navigate = useNavigate('/');
 
-  function replyThreadHandler() {
+  function commentThreadHandler() {
     if (text.trim()) {
-      replyThread(text);
+      onCommentThread(text);
       setText('');
-      navigate('/');
     }
   }
 
   function handleTextChange({ target }) {
-    if (target.value.length <= 320) {
-      setText(target.value);
-    }
+    setText(target.value);
   }
 
   return (
     <div className="thread-reply-input">
-      <textarea type="text" placeholder="Thread your reply" value={text} onChange={handleTextChange} />
-      <p className="thread-reply-input__char-left">
-        <strong>{text.length}</strong>
-        /320
-      </p>
-      <button type="submit" onClick={replyThreadHandler}>Reply</button>
+      <textarea type="text" placeholder="Add comment" value={text} onChange={handleTextChange} />
+      <button type="submit" onClick={commentThreadHandler}>Comment</button>
     </div>
   );
 }
 
 ThreadReplyInput.propTypes = {
-  replyThread: PropTypes.func.isRequired,
+  onCommentThread: PropTypes.func.isRequired,
 };
 
 export default ThreadReplyInput;
