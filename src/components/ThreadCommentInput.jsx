@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-function ThreadReplyInput({ onCommentThread }) {
+function ThreadCommentInput({ onCommentThread }) {
   const [text, setText] = useState('');
 
   function commentThreadHandler() {
@@ -23,8 +23,8 @@ function ThreadReplyInput({ onCommentThread }) {
   );
 }
 
-ThreadReplyInput.propTypes = {
+ThreadCommentInput.propTypes = {
   onCommentThread: PropTypes.func.isRequired,
 };
 
-export default ThreadReplyInput;
+export default ThreadCommentInput;

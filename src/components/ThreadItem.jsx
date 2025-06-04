@@ -21,7 +21,7 @@ function ThreadItem({
 
   return (
     <div role="button" tabIndex={0} className="thread-item" onClick={onThreadClick} onKeyDown={onThreadPress}>
-      <div className="talk-item__user-photo">
+      <div className="thread-item__user-photo">
         <img src={user.avatar} alt={user} />
       </div>
       <div className="thread-item__detail">
@@ -34,7 +34,7 @@ function ThreadItem({
         <article>
           <p className="thread-item__text">{title}</p>
         </article>
-        <div className="talk-item__likes">
+        <div className="thread-item__likes">
           <p>
             {totalComments}<FaComment />
           </p>

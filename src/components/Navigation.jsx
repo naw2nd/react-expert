@@ -19,7 +19,7 @@ function Navigation({ authUser, signOut }) {
 const authUserShape = {
   id: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  photo: PropTypes.string.isRequired,
+  avatar: PropTypes.string.isRequired,
 
 };
 

@@ -8,7 +8,7 @@ function CommentItem({
 
   return (
     <div className="thread-item">
-      <div className="talk-item__user-photo">
+      <div className="thread-item__user-photo">
         <img src={owner.avatar} alt={owner} />
       </div>
       <div className="thread-item__detail">
@@ -33,7 +33,7 @@ const ownerShape = {
 };
 
 const commentItemShape = {
-  title: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
   createdAt: PropTypes.string.isRequired,
   owner: PropTypes.shape(ownerShape).isRequired,
 };
