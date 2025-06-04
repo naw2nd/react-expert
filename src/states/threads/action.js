@@ -35,10 +35,12 @@ function addCommentActionCreator({ content, threadId }) {
 }
 
 
-function asyncAddThread({ title, body, category }) {
+function asyncAddThread({ title, body }) {
   return async (dispatch) => {
     try {
-      const thread = await api.createThread({  title, body, category });
+
+      console.log({ title, body });
+      const thread = await api.createThread({ title, body });
       dispatch(addThreadActionCreator(thread));
     } catch (error) {
       alert(error.message);

@@ -2,28 +2,28 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 function ThreadInput({ addThread }) {
-  const [text, setText] = useState('');
+  const [title, setTitle] = useState('');
+  const [body, setBody] = useState('');
 
   function addthread() {
-    if (text.trim()) {
-      addThread(text);
-      setText('');
+    if (title.trim() && body.trim()) {
+      addThread(title, body);
+      setTitle('');
+      setBody('');
     }
   }
 
-  function handleTextChange({ target }) {
-    if (target.value.length <= 320) {
-      setText(target.value);
-    }
+  function handleTitleChange({ target }) {
+    setTitle(target.value);
+  }
+  function handleBodyChange({ target }) {
+    setBody(target.value);
   }
 
   return (
     <div className="thread-input">
-      <textarea type="text" placeholder="What are you thinking?" value={text} onChange={handleTextChange} />
-      <p className="thread-input__char-left">
-        <strong>{text.length}</strong>
-        /320
-      </p>
+      <input type="text" placeholder="Title" value={title} onChange={handleTitleChange} />
+      <textarea type="text" placeholder="Body" value={body} onChange={handleBodyChange} />
       <button type="submit" onClick={addthread}>Thread</button>
     </div>
   );

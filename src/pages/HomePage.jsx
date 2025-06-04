@@ -17,8 +17,9 @@ function HomePage() {
     dispatch(asyncPopulateUsersAndThreads());
   }, [dispatch]);
 
-  const onAddThread = (text) => {
-    dispatch(asyncAddThread(text));
+  const onAddThread = (title, body) => {
+    console.log('Adding thread:', title, body);
+    dispatch(asyncAddThread({ title, body }));
   };
 
 
