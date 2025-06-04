@@ -11,7 +11,6 @@ function DetailPage() {
   const { id } = useParams();
   const {
     threadDetail = null,
-    authUser,
   } = useSelector((states)=>states);
   const dispatch = useDispatch();
 
@@ -34,11 +33,11 @@ function DetailPage() {
         threadDetail.parent && (
           <div className="detail-page__parent">
             <h3>Commenting To</h3>
-            <ThreadItem {...threadDetail.parent} authUser={authUser.id} />
+            <ThreadItem {...threadDetail.parent} />
           </div>
         )
       }
-      <ThreadDetail {...threadDetail} authUser={authUser.id} />
+      <ThreadDetail {...threadDetail}/>
       <CommentsList comments={threadDetail.comments} />
       <ThreadCommentInput onCommentThread={onCommentThread} />
     </section>
