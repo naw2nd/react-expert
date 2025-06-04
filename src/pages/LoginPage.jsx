@@ -1,5 +1,5 @@
 import React from 'react';
-import { IoEarthOutline } from 'react-icons/io5';
+import { IoCodeDownload } from 'react-icons/io5';
 import { Link } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import LoginInput from '../components/LoginInput';
@@ -15,17 +15,14 @@ function LoginPage() {
   return (
     <section className="login-page">
       <header className="login-page__hero">
-        <h1><IoEarthOutline /></h1>
+        <h1><IoCodeDownload /></h1>
       </header>
       <article className="login-page__main">
         <h2>
-          See
-          {' '}
-          <strong>The World</strong>
+          <strong>Dicoding Forum App</strong>
           ,
           {' '}
           <br />
-          Through Open Space.
         </h2>
 
         <LoginInput login={onLogin} />
