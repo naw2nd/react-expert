@@ -26,6 +26,7 @@ function unsetAuthUserActionCreator() {
 function asyncSetAuthUser({ email, password }) {
   return async (dispatch) => {
     try {
+      console.log({ email, password });
       const token = await api.login({ email, password });
       api.putAccessToken(token);
       const authUser = await api.getOwnProfile();

@@ -44,14 +44,14 @@ const api = (() => {
     return user;
   }
 
-  async function login({ name, password }) {
+  async function login({ email, password }) {
     const response = await fetch(`${BASE_URL}/login`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        name,
+        email,
         password,
       }),
     });
@@ -128,9 +128,9 @@ const api = (() => {
       throw new Error(message);
     }
 
-    const { data: { threadsDetail } } = responseJson;
+    const { data: { detailThread } } = responseJson;
 
-    return threadsDetail;
+    return detailThread;
   }
 
   async function createThread({ title, body, category }) {

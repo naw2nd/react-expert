@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 function Navigation({ authUser, signOut }) {
-  const { id, photo, name } = authUser;
+  const { id, avatar, name } = authUser;
 
   return (
     <div className="navigation">
-      <img src={photo} alt={id} title={name} />
+      <img src={avatar} alt={id} title={name} />
       <nav>
         <Link to="/">Home</Link>
       </nav>

@@ -6,11 +6,11 @@ const ActionType = {
   ADD_COMMENT: 'ADD_COMMENT',
 };
 
-function receiveThreadsActionCreator(thread) {
+function receiveThreadsActionCreator(threads) {
   return {
     type: ActionType.RECEIVE_THREADS,
     payload: {
-      thread,
+      threads,
     },
   };
 }
