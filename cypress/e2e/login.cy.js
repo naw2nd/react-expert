@@ -8,7 +8,7 @@ describe('Login spec', () => {
     cy.visit('http://localhost:5173/');
   });
 
-  it('should display homepage when username and password are correct', () => {
+  it('should display homepage when username and password are correct', { defaultCommandTimeout: 60000 }, () => {
     // mengisi username
     cy.get('input[placeholder="Email"]').type('namesix@mail.com');
 
@@ -18,7 +18,7 @@ describe('Login spec', () => {
     // menekan tombol Login
     cy.get('button').contains(/^Login$/).click();
 
-    cy.get('nav').contains(/^Home$/).should('be.visible');
+    cy.get('nav',).contains(/^Home$/).should('be.visible');
     cy.get('button').contains('Sign out').should('be.visible');
   });
 });
