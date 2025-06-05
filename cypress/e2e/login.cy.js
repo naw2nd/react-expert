@@ -1,3 +1,8 @@
+/**
+ * - Login spec
+ *   - should display homepage when username and password are correct
+ */
+
 describe('Login spec', () => {
   beforeEach(() => {
     cy.visit('http://localhost:5173/');

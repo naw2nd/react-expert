@@ -7,6 +7,14 @@ import { asyncPopulateUsersAndThreads } from './action';
 import { receiveThreadsActionCreator } from '../threads/action';
 import { receiveUsersActionCreator } from '../users/action';
 
+/**
+ * skenario test
+ *
+ * - asyncPopulateUsersAndThreads thunk
+ *  - should dispatch action correctly when data fetching success
+ *  - should dispatch action and call alert correctly when data fetching failed
+ */
+
 const fakeThreadsResponse = [
   {
     id: 'thread-1',

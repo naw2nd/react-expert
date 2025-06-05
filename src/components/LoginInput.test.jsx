@@ -7,6 +7,14 @@ import userEvent from '@testing-library/user-event';
 import matchers from '@testing-library/jest-dom/matchers';
 import LoginInput from './LoginInput';
 
+/**
+ * skenario testing
+ *
+ * - LoginInput component
+ *   - should handle email typing correctly
+ *   - should handle password typing correctly
+ */
+
 expect.extend(matchers);
 
 describe('LoginInput component', () => {
