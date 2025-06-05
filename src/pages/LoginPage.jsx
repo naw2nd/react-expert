@@ -19,7 +19,7 @@ function LoginPage() {
       </header>
       <article className="login-page__main">
         <h2>
-          <strong>Dicoding Forum</strong>
+          <strong>Dicoding Forum Success</strong>
           {' '}
           <br />
         </h2>
