@@ -7,6 +7,6 @@ export default defineConfig({
       // implement node event listeners here
     },
     video: true, // Disable video recording
-    chromeWebSecurity: false,
+    // chromeWebSecurity: false,
   },
 });
