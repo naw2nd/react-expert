@@ -8,7 +8,7 @@ describe('Login spec', () => {
     cy.visit('http://localhost:5173/');
   });
 
-  it('should display homepage when username and password are correct', { defaultCommandTimeout: 60000 }, () => {
+  it('should display homepage when username and password are correct', () => {
     // mengisi username
     cy.get('input[placeholder="Email"]').type('namesix@mail.com');
 
