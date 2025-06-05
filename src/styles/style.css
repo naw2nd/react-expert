@@ -183,12 +183,12 @@ body {
   margin-top: 12px;
 }
 
-.thread-item__likes p {
+/* .thread-item__likes p {
   display: flex;
   align-items: center;
   font-size: 15px;
   gap: 8px;
-}
+} */
 
 .thread-item__likes p button {
   display: flex;

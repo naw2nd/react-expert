@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { FaComment } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 import { postedAt } from '../utils';
+import CommentCountContainer from './styled/CommentCountContainer';
 
 function ThreadItem({
   id, title, createdAt, totalComments, user,
@@ -35,9 +36,9 @@ function ThreadItem({
           <p className="thread-item__text">{title}</p>
         </article>
         <div className="thread-item__likes">
-          <p>
+          <CommentCountContainer>
             {totalComments}<FaComment />
-          </p>
+          </CommentCountContainer>
         </div>
       </div>
     </div>
