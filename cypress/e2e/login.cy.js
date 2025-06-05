@@ -20,6 +20,9 @@ describe('Login spec', () => {
 
     // memverifikasi bahwa elemen yang berada di homepage ditampilkan
     // cy.get('nav', { timeout: 10000 }).contains(/^Home$/).should('be.visible');
-    cy.get('button').contains('Sign out').should('be.visible');
+    cy.get('body').then(($body) => {
+      cy.log($body.html()); // akan muncul di log GitHub Actions
+    });
+    cy.get('button', { timeout: 10000 }).contains('Sign out').should('be.visible');
   });
 });
