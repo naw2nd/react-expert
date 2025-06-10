@@ -25,7 +25,7 @@ describe('RegisterInput component', () => {
 
   it('should handle name typing correctly', async () => {
     // Arrange
-    render(<RegisterInput login={() => {}} />);
+    render(<RegisterInput register={() => {}} />);
     const nameInput = await screen.getByPlaceholderText('Name');
 
     // Action
@@ -37,7 +37,7 @@ describe('RegisterInput component', () => {
 
   it('should handle email typing correctly', async () => {
     // Arrange
-    render(<RegisterInput login={() => {}} />);
+    render(<RegisterInput register={() => {}} />);
     const emailInput = await screen.getByPlaceholderText('Email');
 
     // Action
@@ -49,7 +49,7 @@ describe('RegisterInput component', () => {
 
   it('should handle password typing correctly', async () => {
     // Arrange
-    render(<RegisterInput login={() => {}} />);
+    render(<RegisterInput register={() => {}} />);
     const passwordInput = await screen.getByPlaceholderText('Password');
 
     // Action
